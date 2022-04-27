@@ -1,7 +1,7 @@
 <?php
  $conn = mysqli_connect('localhost','root','','project');
  $productname = $_GET['product_name'];
- $Record = mysqli_query($conn,"select product.*,categories.categories from product,categories where name='$productname'");
+ 
  
 ?>
 <!DOCTYPE html>
@@ -46,7 +46,7 @@
         <div class="col-2">
         <div class="row">
           <?php
-           
+           $Record = mysqli_query($conn,"select product.*,categories.categories from product,categories where name='$productname' LIMIT 1");
             while($row = mysqli_fetch_array($Record)){
             echo "
                   <div class='clo-md-6 col-lg-4 m-auto mb-3'>
@@ -55,8 +55,6 @@
                   <img src='../images/$row[image]' class='card-img-top' alt='...'>
                   <div class='card-body text-left'>
                   <h5>$row[name]</h5>
-                  
-                  <p class='rupee'>Rs $row[price]</p>
                   <input type='hidden' name='PName' value='$row[name]'>
                   <input type='hidden' name='PPrice' value='$row[price]'>
                   <input type='hidden' name='PQuantity' value='1'  placeholder='Quantity'>
@@ -69,25 +67,31 @@
               
         ?>
       </div>
-            
-
-
+          
         </div>
         <div class="col-2">
-            <h2 class="hh">Full Sleeve Solid Boys Casual Jacket</h2>
+            <?php
+            $Record = mysqli_query($conn,"select product.*,categories.categories from product,categories where name='$productname' LIMIT 1");
+            while($row = mysqli_fetch_array($Record)){
+                echo "<h2 class='hh'>$row[name]</h2>
+                <p class='rupee'>Rs $row[price]</p>
+            <h3>Product Details<span>&reg;</span></h3><br>
+            <p>$row[description]</p>
+            ";
+            }
+            ?>
             </h4><br>
             <a href="Form design.html" class="btn">Buy Now</a>
-            <h3>Product Details<span>&reg;</span></h3>
+            
             <br>
-            <p>Give your winter wardrobe a style upgrade with the HRX Boys Active Jacket. Team it with a pair of shorts for your morning workout or a denim for an evening out wioth the guys.</p>
+            <p>
+            <?php 
+            
+            ?></p>
         </div>
     </div>
 </div>
 
-
-
-<!-- ------------offer-------------- -->
-<!-- ------------testimonial--------------- -->
 
 
 <!-- ---------------brands--------------- -->
