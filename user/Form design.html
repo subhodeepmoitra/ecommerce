@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Order Details</title>
+	<link rel="stylesheet" href="stylle3.css">
+</head>
+<body>
+
+
+  <div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.php"><img src="images/logo2.png" alt="logo" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.php" class="activee">Home</a></li>
+                    <li><a href="product.php" class="activee">Products</a></li>
+                    <li><a href="about.html" class="activee">About</a></li>
+                    <li><a href="contact.php" class="activee">Contact</a></li>
+                    <li><a href="account.php" class="activee">Account</a></li>
+                </ul>
+            </nav>
+            <a href="Form design.html"><img src="images/cart.png" alt="cart" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" 
+            onclick="menutoggle()">
+        </div>
+    </div>
+
+
+  <div class="wrapper">
+    <div class="title">
+      Order Details
+    </div>
+    <form action="orders.php" method="GET" >
+    <div class="form">
+      <div class="img">
+        <img src="images/p.jpeg" alt="baby" width="70%">
+      </div>
+       <div class="inputfield">
+          <label>First Name</label>
+          <input type="text" class="input" name="fname" required>
+       </div>  
+        <div class="inputfield">
+          <label>Last Name</label>
+          <input type="text" class="input" name="lname" required>
+       </div> 
+       <div class="inputfield">
+        <!-- <label>Gender</label>
+        <div class="custom_select">
+          <select>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">Others</option>
+          </select>
+        </div> -->
+      </div>
+       <div class="inputfield">
+        <label>Email Address</label>
+        <input type="email" class="input" name="email" required>
+     </div>
+     <div class="inputfield">
+      <label>Phone Number</label>
+      <input type="tel" class="input" name="phno" required>
+   </div>  
+    <div class="inputfield">
+        <label>House No, Building No</label>
+        <input type="text" class="input" name="hno" required>
+     </div>
+     <div class="inputfield">
+      <label>Address</label>
+      <textarea class="textarea" name="address" required></textarea>
+    </div> 
+   <div class="inputfield">
+     <label>Postal Code</label>
+     <input type="number" class="input" name="pin" required>
+    </div>
+    <div class="inputfield">
+      <label>City</label>
+      <input type="text" class="input" name="city" required>
+    </div> 
+
+       <div class="inputfield">
+          <label>State</label>
+          <input type="text" class="input" name="state" required>
+       </div> 
+      
+    
+      <div class="inputfield terms">
+          <label class="check" >
+            <input type="checkbox" required>
+            <span class="checkmark"></span>
+          </label>
+          <p>Agreed to terms and conditions</p>
+       </div> 
+      <div class="inputfield">
+        <a href="https://rzp.io/l/Hnu5Nrsl"><input type="submit" value="Submit" class="btn"></a>
+      </div>
+      <!-- <script src="sweetalert.min.js"></script> -->
+
+      <div class="inputfield-back">
+        <a href="index.php"><input type="back" value="Back" class="btn"></a> 
+      </div>
+      </div>
+    </form>
+    </div>
+  </div>	
+
+
+ 	
+
+ 
+
+ <!-- ----------js for toggle menu----------- -->
+ <script>
+  var MenuItems = document.getElementById("MenuItems");
+  MenuItems.style.maxHeight = "0px";
+  function menutoggle(){
+      if(MenuItems.style.maxHeight == "0px")
+      {
+          MenuItems.style.maxHeight = "200px"
+      }
+      else
+      {
+          MenuItems.style.maxHeight = "0px";
+      }
+  }
+ </script>
+ <!-- --------------JS for product gallery------------- -->
+ <script>
+  var ProductImg = document.getElementById("ProductImg");
+  var SmallImg = document.getElementsByClassName("small-img");
+  
+      SmallImg[0].onclick = function(){
+          ProductImg.src = SmallImg[0].src;
+      }
+      SmallImg[1].onclick = function(){
+          ProductImg.src = SmallImg[1].src;
+      }
+      SmallImg[2].onclick = function(){
+          ProductImg.src = SmallImg[2].src;
+      }
+      SmallImg[3].onclick = function(){
+          ProductImg.src = SmallImg[3].src;
+      }
+
+
+ </script>
+
+ <script>
+  // Add active class to the current button (highlight it)
+  var header = document.getElementById("MenuItems");
+  var btns = header.getElementsByClassName("activeee");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+    });
+  }
+  </script>
+
+
+
+
+</body>
+</html>
