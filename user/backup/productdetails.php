@@ -1,7 +1,7 @@
 <?php
  $conn = mysqli_connect('localhost','root','','project');
  $productname = $_GET['product_name'];
- session_start();
+ 
  
 ?>
 <!DOCTYPE html>
@@ -48,53 +48,42 @@
           <?php
            $Record = mysqli_query($conn,"select product.*,categories.categories from product,categories where name='$productname' LIMIT 1");
             while($row = mysqli_fetch_array($Record)){
-            ?>
+            echo "
                   <div class='clo-md-6 col-lg-4 m-auto mb-3'>
                   <form action='Insertcart.php' method='POST'>
                   <div class='card m-auto' style='width: 16rem;'>
-                  <img src="../images/<?php echo $row['image']?>" class='card-img-top' alt='...'>
+                  <img src='../images/$row[image]' class='card-img-top' alt='...'>
                   <div class='card-body text-left'>
-                  
-                  <input type='hidden' name='PName' value="<?php echo $row['name']?>">
-                  <input type='hidden' name='PPrice' value="<?php echo $row['price']?>">
-                  <input type='hidden' name='PQuantity' value='1' placeholder='Quantity'>
-                  <?php
-                  if(isset($_SESSION['user'])){
-                  ?>      
-                  <button type='submit' name='addCart' class='btn btn-warning text-white w-100' value='Add to Cart'>Add to Cart</button>
-                  <a href='Proced_To_Pay2.php?pp=<?php echo $row['price'];?>'><button type='button' class='btn btn-warning text-white w-100' value='Buy Now'>Buy Now</button></a>
-                  <?php
-                  }
-                  else{
-                    echo "<a href='login.php'><button type='button' class='btn btn-warning text-white w-100 value='Login'>Login</button></a>";
-                  }
-                  ?>
+                  <h5>$row[name]</h5>
+                  <input type='hidden' name='PName' value='$row[name]'>
+                  <input type='hidden' name='PPrice' value='$row[price]'>
+                  <input type='hidden' name='PQuantity' value='1'  placeholder='Quantity'>
+                  <input type='submit' name='addCart' class='btn btn-warning text-white w-100' value='Add to Cart'>
                   </div>
                   </div>
                   </form>
-                  </div>
-                  <?php
+                  </div>";
                 }
               
         ?>
       </div>
+          
         </div>
         <div class="col-2">
             <?php
             $Record = mysqli_query($conn,"select product.*,categories.categories from product,categories where name='$productname' LIMIT 1");
             while($row = mysqli_fetch_array($Record)){
                 echo "<h2 class='hh'>$row[name]</h2>
-                <p class='rupee'>Rs $row[price]</p><br>
+                <p class='rupee'>Rs $row[price]</p>
             <h3>Product Details<span>&reg;</span></h3><br>
             <p>$row[description]</p>
             ";
             }
             ?>
+            </h4><br>
+            <a href="Form design.html" class="btn">Buy Now</a>
+            
             <br>
-            <br>
-            <br>
-            <br>
-          
             <p>
             <?php 
             
