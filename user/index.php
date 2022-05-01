@@ -24,7 +24,14 @@ include 'session.php';
 
 </head>
 <body>
-
+<style>
+    .card:hover{
+    transform: scale(1.1);
+}
+.card{
+    transition: transform .5s;
+}
+</style>
 
 <div class="header">
 <div class="container">
