@@ -60,19 +60,21 @@ if(isset($_SESSION['cart'])){
           }
         ?>
         <?php
-          $row = $_GET['pp'];
+          $pp = $_GET['pp'];
         $Record = mysqli_query($conn,"select product.*,categories.categories from product,categories where price='$row' LIMIT 1");
         while($row = mysqli_fetch_array($Record)){
           echo"
-          <form>
-            <div class='mb-3'>
-              <h2><label for='exampleInputEmail1' class='form-label'>Amount</label></h2>
-              <h1 class='text-danger'> &#8377; $row[price]</h1>
-            </div>
-          </form>";     
+          <div class='mb-3'>
+          <h2><label  class='form-label'>Price</label></h2>
+          <h4 class='text-secondary'>$row[pp]</h4>
+        </div>";
         }
         ?>  
-          <a href="payment.php"><input type="submit" class="btn btn-success" value="Proced To Pay"></a>
+          <div class='mb-3'>
+          <h2><label  class='form-label'>Price</label></h2>
+          <h4 class='text-secondary'>&#8377; <?php $price=$_GET['pp']; echo $price; ?></h4>
+        </div>
+          <a href="payment2.php?price=<?php echo $pp; ?>"><input type="submit" class="btn btn-success" value="Proceed To Pay"></a>
       </div>
     </div>
   </div>

@@ -133,7 +133,7 @@ include 'session.php';
               // output data of each row
               while($row = $result->fetch_assoc()) {
                  $product_name = $row['name'];
-                  echo "<div class='card' style='width: 18rem;'>
+                  echo "<div class='card mb-5' style='width: 18rem;'>
                   <a href='"."productdetails.php?product_name=$product_name"."'> <img src='../images/$row[image]' class='card-img-top' alt='...'>
                   <div class='card-body'>
                   <h5 class='card-title text-center'>$row[name]</h5>
@@ -166,7 +166,7 @@ include 'session.php';
               // output data of each row
               while($row = $result->fetch_assoc()) {
                   $product_name = $row['name'];
-                  echo "<div class='card' style='width: 18rem;'>
+                  echo "<div class='card mb-5' style='width: 18rem;'>
                   <a href='"."productdetails.php?product_name=$product_name"."'> <img src='../images/$row[image]' class='card-img-top' alt='...'>
                   <div class='card-body'>
                   <h5 class='card-title text-center'>$row[name]</h5>
@@ -200,7 +200,7 @@ include 'session.php';
               // output data of each row
               while($row = $result->fetch_assoc()) {
                   $product_name = $row['name'];
-                  echo "<div class='card' style='width: 18rem;'>
+                  echo "<div class='card mb-5' style='width: 18rem;'>
                  <a href='"."productdetails.php?product_name=$product_name"."'> <img src='../images/$row[image]' class='card-img-top' alt='...'>
                   <div class='card-body'>
                   <h5 class='card-title text-center'>$row[name]</h5>
