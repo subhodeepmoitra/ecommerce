@@ -31,7 +31,7 @@
         <nav>
             <ul id="MenuItems">
                 <li><a href="index.php" class="activee">Home</a></li>
-                <li><a href="product.php" class="activee active">Products</a></li>
+                <!-- <li><a href="product.php" class="activee active">Products</a></li> -->
                 <li><a href="about.html" class="activee">About</a></li>
                 <li><a href="contact.php" class="activee">Contact</a></li>
                 <li><a href="account.php" class="activee">Account</a></li>

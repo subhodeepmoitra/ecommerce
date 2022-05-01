@@ -86,7 +86,7 @@ include 'session.php';
                 <!-- <i class="fa fa-search" aria-hidden="true"></i>
                 <input type="search" name="" class="search"> -->
                 <li><a href="index.php" class="activee active">Home</a></li>
-                <li><a href="product.php" class="activee">Products</a></li>
+                <!-- <li><a href="product.php" class="activee">Products</a></li> -->
                 <li><a href="about.html" class="activee">About</a></li>
                 <li><a href="contact.php" class="activee">Contact</a></li>
                 <li><a href="account.php" class="activee">Account</a></li>
@@ -100,7 +100,7 @@ include 'session.php';
         <div class="col-2">
             <h1 class="title-design">Give Your Baby<br>A New Life!</h1>
             <p>Giving birth and being born brings us into the essence of creation, where the human spirit is courageous and bold and the body<br> miracle of wisdom.</p>
-            <a href="product.php" class="btn">Explore Now &#8594;</a>
+            <!-- <a href="product.php" class="btn">Explore Now &#8594;</a> -->
         </div>
         <div class="col-2">
             <img src="images/image01.png" alt="image">
